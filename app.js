@@ -1,8 +1,10 @@
 import express from "express";
-import { getData } from "./service.js";
+import DataController from "./controllers/DataController.js";
+import { InitMongoose } from "./utils/MongooseConn.js";
+
+InitMongoose();
 
 const app = express();
-
-app.post("/data", getData);
+app.post("/data", DataController);
 
 app.listen(process.env.PORT || 3000);
