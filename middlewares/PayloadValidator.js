@@ -6,7 +6,6 @@ export const PayloadValidator = () => async (request, response, next) => {
     await PayloadSchema.validate(payload);
     next();
   } catch (error) {
-    console.error(error);
     ResponseHandler(response, [], error);
   }
 };
