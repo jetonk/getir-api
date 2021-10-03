@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "NODE_ENV=dev node server.js",
-    "start:prod": "NODE_ENV=prod pm2 start server.js",
+    "start:prod": "pm2 start server.js",
     "test": "jest"
   },
   "devDependencies": {
