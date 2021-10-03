@@ -15,8 +15,8 @@
     "yup": "^0.32.9"
   },
   "scripts": {
-    "start": "NODE_ENV=dev node server.js",
-    "start:prod": "pm2 start server.js",
+    "start:dev": "NODE_ENV=dev node server.js",
+    "start": "pm2 start server.js",
     "test": "jest"
   },
   "devDependencies": {
