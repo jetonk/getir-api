@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
-import { dbURI } from "../config/DB.js";
+import config from "../config/index.js";
 import request from "supertest";
 import app from "../app.js";
 import Model from "../models/Main.js";
-import { GetData } from "../queeries/GetData.js";
+import { GetData } from "../queries/GetData.js";
 
+const { dbURI } = config;
 describe("Test the app.js", () => {
   const payload = {
     startDate: "2015-01-04",

@@ -17,7 +17,7 @@
   "scripts": {
     "start": "node server.js",
     "start:dev": "NODE_ENV=dev node server.js",
-    "test": "jest"
+    "test": "NODE_ENV=test jest"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.15.6",
