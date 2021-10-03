@@ -1,5 +1,4 @@
-const env = process.env.NODE_ENV;
-console.log("env", env);
+const env = process.env.NODE_ENV || "dev";
 
 const config = {
   dev: {
