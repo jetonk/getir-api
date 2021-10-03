@@ -1,14 +1,14 @@
 import app from "./src/app.js";
 import mongoose from "mongoose";
-import { dbURI } from "./src/config/DB.js";
+import config from "./src/config/index.js";
 
 mongoose
-  .connect(dbURI, { keepAlive: true, keepAliveInitialDelay: 300000 })
+  .connect(config.dbURI, { keepAlive: true, keepAliveInitialDelay: 300000 })
   .then(app.listen(process.env.PORT || 3000))
   .catch((err) => console.log(err.reason));
 
 mongoose.connection.on("connected", function () {
-  console.log("Mongoose default connection open to " + dbURI);
+  console.log("Mongoose default connection open to " + config.dbURI);
 });
 
 mongoose.connection.on("error", function (err) {
