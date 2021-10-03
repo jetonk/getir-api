@@ -1,6 +1,6 @@
 import Model from "../models/Main.js";
 import { ResponseHandler } from "../utils/Response.js";
-import { GetData } from "../queeries/GetData.js";
+import { GetData } from "../queries/GetData.js";
 
 export const DataController = async (request, response) => {
   const query = GetData(request.body);
