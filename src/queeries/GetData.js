@@ -1,9 +1,6 @@
-import Model from "../models/Main.js";
-import { ResponseHandler } from "../utils/Response.js";
-
-export const DataController = async (request, response) => {
-  const { startDate, endDate, minCount, maxCount } = request.body;
-  const records = await Model.aggregate([
+export const GetData = (payload) => {
+  const { startDate, endDate, minCount, maxCount } = payload;
+  return [
     {
       $project: {
         _id: 0,
@@ -21,6 +18,5 @@ export const DataController = async (request, response) => {
         totalCount: { $gt: minCount, $lte: maxCount },
       },
     },
-  ]);
-  ResponseHandler(response, records);
+  ];
 };
