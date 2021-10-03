@@ -1,27 +1,35 @@
-const Response = {
-  success: (res, records) => {
-    res.status(200);
-    res.send({
-      code: 0,
-      msg: "Retrieved the records successfully.",
-      records,
-    });
-  },
-  badRequest: (res, msg = null, data = null) => {
-    res.status(400);
-    res.send({
-      success: false,
-      msg: msg,
-      body: data,
-    });
-  },
-  noData: (res, msg = null, data = null) => {
-    res.status(200);
-    res.send({
-      success: false,
-      msg: msg,
-      body: data,
-    });
-  },
+export const ResponseHandler = (response, records) => {
+  if (records.length > 0) {
+    return success(response, records);
+  }
+  if (records.length === 0) {
+    return noRecordsFound(response, records);
+  }
 };
-export default Response;
+
+const success = (response, records) => {
+  response.status(200);
+  response.send({
+    code: 0,
+    msg: "Retrieved the records successfully.",
+    records,
+  });
+};
+
+const badRequest = (response, records) => {
+  response.status(400);
+  response.send({
+    success: false,
+    msg: msg,
+    records,
+  });
+};
+
+const noRecordsFound = (response, records) => {
+  response.status(200);
+  response.send({
+    code: 1,
+    msg: "We couldn't find any results with your search.",
+    records,
+  });
+};

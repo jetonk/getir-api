@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
-
-const dbURI = `mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study?retryWrites=true`;
+import { dbURI } from "../config/DB.js"
 
 export const InitMongoose = () => {
   mongoose
