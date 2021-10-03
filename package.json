@@ -11,12 +11,10 @@
     "express": "^4.17.1",
     "helmet": "^4.6.0",
     "mongoose": "^6.0.8",
-    "pm2": "^5.1.2",
     "yup": "^0.32.9"
   },
   "scripts": {
-    "start:dev": "NODE_ENV=dev node server.js",
-    "start": "pm2 start server.js",
+    "start": "NODE_ENV=dev node server.js",
     "test": "jest"
   },
   "devDependencies": {
